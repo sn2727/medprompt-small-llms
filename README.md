@@ -1,34 +1,24 @@
-## LLMs as a valid tool for patient education/patient information pre-surgery
+# LLMs for patient information
 
-This project investigates two questions: 
-- Are LLMs, like openELM, capable of effectively educating patients about pre-transplantation surgery on mobile devices? 
-- Among specialized models, fine-tuned models, and foundation models, which is more suitable for patient education purposes?
+Patient information through large language models (LLMs) offers real-time, cheap and user-tailored answers to medical questions. However, this information needs to be reliable. The MedPrompt paper introduces a novel technique that improves the performance of LLMs in the medical domain not by fine-tuning the models specifically for healthcare, but by using carefully designed prompts. This method proved highly effective, demonstrating that prompting alone can significantly boost LLM accuracy in medical tasks. Used techniques include In-Context-Learning, Ensembling and Chain-of-Thought Reasoning.  
+
+![image](medprompt.png)
+Can Generalist Foundation Models Outcompete Special-Purpose Tuning? Case Study in Medicine
+Nori et al. (2023)
 
 
-## Efficient LLMs for mobile devices
 
-Trend in development of LLMs to make them more efficient to use for deployment on mobile devices. 
+## Lighweight mobile LLMs
+
+The `medprompt.ipynb` notebook implements an adaptation of MedPrompt for small LLMs and evaluates them on multiple choice questions from MedQA (`GBaker/MedQA-USMLE-4-options`).
 
 Models considered: 
-- microsoft/Phi-3-mini-4k-instruct (3.82B params)
-- TinyLlama/TinyLlama-1.1B-Chat-v0.1 (1.1B params)
-- apple/OpenELM-3B (3.04B params)
-- google/gemma-2b-it (2.51B params)
+- microsoft/Phi-3-mini-4k-instruct (3.82B params) (April 2024)
+- TinyLlama/TinyLlama-1.1B-Chat-v0.1 (1.1B params) (September 2023)
+- apple/OpenELM-3B (3.04B params) (April 2024)
+- google/gemma-2-2b-it (2.61B params) (July 2024)
+- HuggingFaceTB/SmolLM-1.7B-Instruct (1.71B params) (July 2024)
 
-1000 surgery questions from MedMCQA (consists of various medical entrance exam questions) (HF: `openlifescienceai/medmcqa`):
+![image](result.png)
+Results of the small language models with and without MedPrompt
 
-| Model | Accuracy |
-|-------|----------|
-|phi-3  | 66.8%    |
-|llama  | 26.0%    |
-|openelm| 28.7%    | 
-|gemma  | 32.7%    | 
-
-1000 multiple choice questions from `GBaker/MedQA-USMLE-4-options` USMLE dataset
-
-| Model | Accuracy |
-|-------|----------|
-|phi-3  | 63.7%    |
-|llama  | 22.4%    |
-|openelm| 27.1%    |
-|gemma  | 30.4%    |
