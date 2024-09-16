@@ -1,6 +1,6 @@
 # LLMs for patient information
 
-Patient information through large language models (LLMs) offers real-time, cheap and user-tailored answers to medical questions. However, this information needs to be reliable. The MedPrompt paper introduces a novel technique that improves the performance of LLMs in the medical domain not by fine-tuning the models specifically for healthcare, but by using carefully designed prompts. This method proved highly effective, demonstrating that prompting alone can significantly boost LLM accuracy in medical tasks. Used techniques include In-Context-Learning, Ensembling and Chain-of-Thought Reasoning.  
+Patient information through large language models (LLMs) offers real-time, cheap and user-tailored answers to medical questions. However, this information needs to be reliable. The MedPrompt paper introduces a novel technique that improves the performance of LLMs in the medical domain not by fine-tuning the models specifically for healthcare, but by using carefully designed prompts. This method proved highly effective, demonstrating that prompting alone can significantly boost LLM accuracy in medical tasks. Used techniques include Dynamic Few Shot, Ensembling and Chain-of-Thought Reasoning.  
 
 ![image](medprompt.png)
 Can Generalist Foundation Models Outcompete Special-Purpose Tuning? Case Study in Medicine
@@ -22,3 +22,13 @@ Models considered:
 ![image](result.png)
 Results of the small language models with and without MedPrompt
 
+## References
+
+- [Medprompt paper](https://arxiv.org/abs/2311.16452) 
+- [Manual evaluation of LLMs' medical answers](https://www.sciencedirect.com/science/article/pii/S2772529424000602?via%3Dihub)
+- [Experts assessing quality of answers to patient's questions](https://www.jmir.org/2024/1/e54758/)
+- [General evaluation of LLMs in healthcare](https://www.medrxiv.org/content/10.1101/2024.04.15.24305869v1.full)
+- https://www.nature.com/articles/s41746-024-01081-0 
+- https://arxiv.org/abs/2406.11402 
+- https://www.kaggle.com/code/mistylight/mini-giants-small-language-models 
+- https://github.com/microsoft/promptbase 
